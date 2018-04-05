@@ -1,0 +1,12 @@
+@import '../../../_variables';
+
+.copyright.module {
+  padding: $space-mini;
+  text-align: center;
+
+  .copyright {
+    margin: 0;
+    color: $gray-light;
+    font-size: $font-size-tiny;
+  }
+}

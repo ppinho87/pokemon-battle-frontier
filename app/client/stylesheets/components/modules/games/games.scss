@@ -1,0 +1,49 @@
+@import '../../../_variables';
+
+.games.module {
+  margin-top: $space-mini;
+
+  .games.list {
+    margin: auto;
+
+    @media (min-width: $tablet-width) {
+      width: $three-quarters;
+    }
+
+    @media (min-width: $large-desktop-width) {
+      width: $half;
+    }
+
+    .game.item {
+      cursor: pointer;
+      display: block;
+      margin-bottom: $space-base;
+      padding: $space-base;
+      border: $space-micro solid $highlight-color;
+      border-radius: $space-micro;
+      background-color: $offset-color;
+
+      &:hover {
+        border-color: $primary-color;
+      }
+
+      &.full {
+        border-color: rgba($negative-color, 0.75);
+        background-color: rgba($negative-color, 0.15);
+      }
+
+      .title {
+        display: block;
+        margin: 0;
+
+        .meta {
+          float: right;
+        }
+      }
+
+      .creator {
+        display: block;
+      }
+    }
+  }
+}

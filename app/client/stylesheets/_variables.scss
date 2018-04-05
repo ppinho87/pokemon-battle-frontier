@@ -1,0 +1,133 @@
+// Monochrome
+
+$dark:         #000;
+$gray-darker:  lighten(#000, 13.5%); // #222
+$gray-dark:    lighten(#000, 20%);   // #333
+$gray:         lighten(#000, 33.5%); // #555
+$gray-light:   lighten(#000, 46.7%); // #777
+$gray-lighter: lighten(#000, 93.5%); // #eee
+$light:        #fff;
+
+// Brand Colors
+
+$primary-color: #46A6D8;
+$secondary-color: #39383E;
+$neutral-color: #E1E1E3;
+$offset-color: #F4FFFF;
+$highlight-color: #9FC4D6;
+
+// Global
+
+$font-color: $secondary-color;
+$header-color: $gray-darker;
+$link-color: $primary-color;
+$divider-color: $neutral-color;
+
+// Backgrounds
+
+$background-color: $light;
+$background-image: url('/images/space_battle.jpg');
+
+// Alerts
+
+$positive-color: #6CEE38;
+$negative-color: #FC6262;
+$caution-color: #FABC28;
+$info-color: #30E3F6;
+
+// Animation Speed
+
+$fastest: 50ms;
+$faster: 250ms;
+$fast: 500ms;
+$slow: 1000ms;
+$slower: 2000ms;
+$slowest: 3000ms;
+
+// Margin and Padding
+
+$space-quantum: 0.05em;
+$space-atomic: 0.10em;
+$space-micro: 0.15em;
+$space-mini: 0.25em;
+$space-tiny: 0.5em;
+$space-small: 0.75em;
+$space-base: 1em;
+$space-large: 2em;
+$space-huge: 3em;
+$space-jumbo: 4em;
+$space-massive: 5em;
+$space-giant: 6em;
+$space-colossal: 7em;
+$space-titanic: 8em;
+$space-galactic: 9em;
+$space-god: 10em;
+
+// Fluid Spaces
+
+$fluid-sixteenth: 6vh;
+$fluid-eighth: 12.5vh;
+$fluid-quarter: 25vh;
+$fluid-third: 33.3333vh;
+$fluid-half: 50vh;
+$fluid-two-thirds: 66.6666vh;
+$fluid-three-quarters: 75vh;
+$fluid-full: 100vh;
+
+// Grid Spaces
+
+$sixteenth: 6%;
+$eighth: 12.5%;
+$quarter: 25%;
+$third: 33.3333%;
+$half: 50%;
+$two-thirds: 66.6666%;
+$three-quarters: 75%;
+$full: 100%;
+
+// Typography
+
+$font-family-sans-serif: Helvetica, Arial, sans-serif;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace: Menlo, Monaco, Consolas, monospace;
+$font-family-base: $font-family-sans-serif;
+$font-family-header: $font-family-sans-serif;
+
+$font-size-quantum: 0.05rem;
+$font-size-atomic: 0.10rem;
+$font-size-micro: 0.15rem;
+$font-size-mini: 0.25rem;
+$font-size-tiny: 0.5rem;
+$font-size-small: 0.75rem;
+$font-size-base: 1rem;
+$font-size-large: 2rem;
+$font-size-huge: 3rem;
+$font-size-jumbo: 4rem;
+$font-size-giant: 5rem;
+$font-size-massive: 6rem;
+$font-size-colossal: 7rem;
+$font-size-titanic: 6rem;
+$font-size-galactic: 9rem;
+$font-size-god: 10rem;
+
+$line-height-quantum: 0.05;
+$line-height-atomic: 0.15;
+$line-height-micro: 0.25;
+$line-height-tiny: 0.5;
+$line-height-small: 0.75;
+$line-height-base: 1;
+$line-height-large: 1.25;
+$line-height-huge: 1.5;
+$line-height-jumbo: 1.75;
+$line-height-giant: 2;
+
+// Media Queries
+
+$phone-width: 30em;
+$tablet-width: 48em;
+$laptop-width: 62em;
+$desktop-width: 75em;
+$large-desktop-width: 100em;
+$huge-desktop-width: 125em;
+$jumbo-desktop-width: 175em;
+$giant-desktop-width: 200em;

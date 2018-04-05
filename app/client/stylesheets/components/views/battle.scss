@@ -1,0 +1,11 @@
+@import '../../_variables';
+
+.battle.view {
+  position: fixed;
+  width: $full;
+  height: $fluid-full;
+  background: $background-image;
+  background-size: cover;
+  background-position: $half $half;
+  background-repeat: no-repeat;
+}

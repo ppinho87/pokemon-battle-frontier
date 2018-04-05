@@ -1,0 +1,41 @@
+@import '../../../_variables';
+
+.logo.module {
+  position: relative;
+  height: 0;
+  width: $three-quarters;
+  margin: auto;
+  padding: 0;
+  border-top: $space-base + $space-tiny solid $secondary-color;
+  border-left: $space-base + $space-tiny solid transparent;
+  border-right: $space-base + $space-tiny solid transparent;
+  text-align: center;
+  z-index: 1;
+
+  @media (min-width: $phone-width) {
+    width: $half;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: $quarter;
+  }
+
+  .logo {
+    position: absolute;
+    bottom: $space-mini;
+    left: 0;
+    width: $full;
+    margin: 0;
+    cursor: pointer;
+    color: $offset-color;
+    text-decoration: none;
+
+    .fa {
+      color: $primary-color;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

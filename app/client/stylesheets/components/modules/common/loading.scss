@@ -1,0 +1,108 @@
+@import '../../../_variables';
+
+.loading.module {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $full;
+  height: $fluid-full;
+  z-index: 10;
+  background-color: $secondary-color;
+
+  .loader {
+    backface-visibility: hidden;
+    margin: 0 auto;
+    width: 180px;
+    height: 180px;
+    background-color: $secondary-color;
+    border-radius: 0 0 50px 50px;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+
+    .message {
+      margin: 0;
+      color: $offset-color;
+    }
+
+    .hands {
+      backface-visibility: hidden;
+      position: absolute;
+      top: $three-quarters;
+      left: 15%;
+      width: 120px;
+      height: 120px;
+      margin-top: 150px;
+      background-color: $secondary-color;
+      border-radius: $space-base;
+      box-shadow: (-$space-quantum) (-$space-mini) 0 0 $offset-color;
+      transform: rotate(45deg);
+      animation: sway2 1.5s infinite alternate;
+      animation-timing-function: ease-out;
+      z-index: 1;
+    }
+
+    .body {
+      position: relative;
+      margin: 90px auto;
+      width: 140px;
+      height: 120px;
+      background-color: $secondary-color;
+      border-radius: $space-large;
+      box-shadow: inset (-$space-mini) ($space-atomic) 0 0 $offset-color;
+      animation: sway2 1.5s infinite alternate;
+      animation-timing-function: ease-out;
+    }
+
+    .head {
+      -webkit-backface-visibility: hidden;
+      position: relative;
+      margin: -250px auto;
+      width: 80px;
+      height: 80px;
+      background-color: $secondary-color;
+      border-radius: 50px;
+      box-shadow: inset (-$space-mini) ($space-atomic) 0 0 $offset-color;
+      animation: sway 1.5s infinite alternate;
+      animation-timing-function: ease-out;
+
+      .eye {
+        width: 25px;
+        height: 10px;
+        background-color: $offset-color;
+        border-radius: 0 0 $space-tiny $space-tiny;
+        position: relative;
+        top: 40px;
+        left: 10px;
+        box-shadow: ($space-large + $space-mini) 0 0 0 $offset-color;
+      }
+    }
+  }
+}
+
+@keyframes sway {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 0.5em;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes sway2 {
+  0% {
+    top: -0.25em;
+  }
+  50% {
+    top: 0.5em;
+  }
+  100% {
+    top: -0.25em;
+  }
+}

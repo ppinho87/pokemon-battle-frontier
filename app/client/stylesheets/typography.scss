@@ -1,0 +1,173 @@
+@import '_variables';
+
+html {
+
+  body {
+    color: $font-color;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+
+    p, a, li, td, blockquote, article, figure, pre, code {
+      position: relative;
+      margin: 0;
+      margin-bottom: $space-base;
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      line-height: $line-height-large;
+
+      @media (min-width: $tablet-width) {
+        font-size: $font-size-base + $font-size-micro;
+      }
+
+      @media (min-width: $laptop-width) {
+        font-size: $font-size-base + $font-size-mini;
+      }
+
+      @media (min-width: $desktop-width) {
+        font-size: $font-size-base + $font-size-tiny;
+      }
+    }
+
+    a {
+      color: $link-color;
+      font-size: inherit;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: darken($link-color, $sixteenth);
+        text-decoration: underline;
+      }
+
+      &:visited {
+        color: $highlight-color;
+      }
+
+      &:active {
+        color: $highlight-color;
+        text-decoration: underline;
+      }
+    }
+
+    pre, code {
+      overflow: auto;
+      padding: $space-base;
+      color: $light;
+      background: $gray-darker;
+      border-radius: $space-mini;
+    }
+
+    h1, h2, h3, h4, h5, h6, th, figcaption {
+      position: relative;
+      margin: 0;
+      margin-bottom: $space-base;
+      color: $header-color;
+      font-size: inherit;
+      font-family: $font-family-base;
+      font-weight: bold;
+
+      small {
+        color: lighten($header-color, $eighth);
+        font-size: $half;
+      }
+    }
+
+    h1 {
+      font-size: $font-size-base + $font-size-tiny;
+
+      @media (min-width: $tablet-width) {
+        font-size: $font-size-base + $font-size-small;
+      }
+
+      @media (min-width: $laptop-width) {
+        font-size: $font-size-large;
+      }
+
+      @media (min-width: $desktop-width) {
+        font-size: $font-size-large + $font-size-mini;
+      }
+    }
+
+    h2 {
+      font-size: $font-size-base + $font-size-mini;
+      color: $gray-darker;
+
+      @media (min-width: $tablet-width) {
+        font-size: $font-size-base + $font-size-tiny;
+      }
+
+      @media (min-width: $laptop-width) {
+        font-size: $font-size-base + $font-size-small;
+      }
+
+      @media (min-width: $desktop-width) {
+        font-size: $font-size-large;
+      }
+    }
+
+    h3 {
+      font-size: $font-size-base + $font-size-micro;
+
+      @media (min-width: $tablet-width) {
+        font-size: $font-size-base + $font-size-mini;
+      }
+
+      @media (min-width: $laptop-width) {
+        font-size: $font-size-base + $font-size-tiny;
+      }
+
+      @media (min-width: $desktop-width) {
+        font-size: $font-size-base + $font-size-small;
+      }
+    }
+
+    h4 {
+      font-size: $font-size-base;
+
+      @media (min-width: $tablet-width) {
+        font-size: $font-size-base + $font-size-micro;
+      }
+
+      @media (min-width: $laptop-width) {
+        font-size: $font-size-base + $font-size-mini;
+      }
+
+      @media (min-width: $desktop-width) {
+        font-size: $font-size-base + $font-size-tiny;
+      }
+    }
+
+    h5 {
+      font-size: $font-size-small;
+
+      @media (min-width: $tablet-width) {
+        font-size: $font-size-base;
+      }
+
+      @media (min-width: $laptop-width) {
+        font-size: $font-size-base + $font-size-micro;
+      }
+
+      @media (min-width: $desktop-width) {
+        font-size: $font-size-base + $font-size-mini;
+      }
+    }
+
+    h6 {
+      font-size: $font-size-tiny;
+
+      @media (min-width: $tablet-width) {
+        font-size: $font-size-small;
+      }
+
+      @media (min-width: $laptop-width) {
+        font-size: $font-size-base;
+      }
+
+      @media (min-width: $desktop-width) {
+        font-size: $font-size-base + $font-size-micro;
+      }
+    }
+  }
+}

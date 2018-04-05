@@ -1,0 +1,49 @@
+@import '../../../_variables';
+
+.menu.module {
+  padding: 0;
+
+  .actions.module {
+    padding: 0;
+
+    .button {
+      position: fixed;
+      bottom: 0;
+      border-radius: 0;
+      z-index: 1;
+
+      &:after,
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 0;
+        width: 0;
+      }
+
+      &.left {
+        left: 0;
+
+        &:after {
+          bottom: -0.35em;
+          right: -$space-large;
+          border: $space-base solid $secondary-color;
+          border-top: $space-base solid transparent;
+          border-right: $space-base solid transparent;
+        }
+      }
+
+      &.right {
+        right: 0;
+
+        &:before {
+          bottom: -$space-mini;
+          left: -$space-large;
+          border: $space-base solid $secondary-color;
+          border-top: $space-base solid transparent;
+          border-left: $space-base solid transparent;
+        }
+      }
+    }
+  }
+}

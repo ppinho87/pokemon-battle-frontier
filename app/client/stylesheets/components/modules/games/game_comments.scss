@@ -1,0 +1,42 @@
+@import '../../../_variables';
+
+.game.comments.modal {
+
+  .comments.list {
+    margin: $space-base auto;
+    height: $fluid-three-quarters;
+    overflow: auto;
+
+    @media (min-width: $phone-width) {
+      width: $three-quarters;
+    }
+
+    @media (min-width: $tablet-width) {
+      width: $two-thirds;
+    }
+
+    @media (min-width: $laptop-width) {
+      width: $half;
+    }
+
+    .comment.item {
+      margin: $space-base auto;
+      padding: $space-base;
+      border-radius: $space-micro;
+      background-color: $offset-color;
+
+      .user {
+        margin: 0;
+        color: $primary-color;
+
+        .date {
+          font-weight: normal;
+        }
+      }
+
+      .comment {
+        margin: 0;
+      }
+    }
+  }
+}

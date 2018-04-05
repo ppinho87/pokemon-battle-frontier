@@ -1,0 +1,93 @@
+@import '../../../_variables';
+
+.game.details.module {
+  display: flex;
+  flex-wrap: wrap;
+  top: $space-large + $space-small;
+  margin: auto;
+  padding: 0;
+  z-index: 2;
+
+  @media (min-width: $phone-width) {
+    width: $three-quarters;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: $two-thirds;
+  }
+
+  @media (min-width: $laptop-width) {
+    width: $half;
+  }
+
+  .player {
+    flex: 1;
+    position: relative;
+    bottom: $space-mini;
+    margin: 0;
+
+    .label {
+      border-radius: 0;
+      width: 90%;
+
+      @media (min-width: $phone-width) {
+        width: $three-quarters;
+      }
+
+      @media (min-width: $tablet-width) {
+        width: $half;
+      }
+
+      @media (min-width: $laptop-width) {
+        width: auto;
+      }
+
+      &:after,
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        height: 0;
+        width: 0;
+      }
+    }
+
+    &.creator {
+
+      .label {
+
+        &:after {
+          right: -$space-large;
+          border: $space-base solid $highlight-color;
+          border-top: $space-base solid transparent;
+          border-right: $space-base solid transparent;
+        }
+
+        .points {
+          margin-left: $space-large;
+          float: right;
+        }
+      }
+    }
+
+    &.destroyer {
+      text-align: right;
+
+      .label {
+
+        &:before {
+          left: -$space-large;
+          border: $space-base solid $highlight-color;
+          border-top: $space-base solid transparent;
+          border-left: $space-base solid transparent;
+        }
+
+        .points {
+          margin-right: $space-large;
+          float: left;
+        }
+      }
+    }
+  }
+}

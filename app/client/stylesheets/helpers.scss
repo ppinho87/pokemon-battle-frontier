@@ -1,0 +1,32 @@
+@import '_variables';
+
+.highlight {
+  background-color: $highlight-color;
+}
+
+.emphasis {
+  color: $gray;
+}
+
+.user {
+  color: $highlight-color;
+}
+
+.hidden {
+  display: none !important;
+
+  &.mobile {
+
+    @media (min-width: $tablet-width) {
+      display: inline-block !important;
+    }
+  }
+}
+
+// wildcard
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

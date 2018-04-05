@@ -1,0 +1,14 @@
+@import '../../_variables';
+
+.account.view {
+  padding: $space-base;
+
+  .title {
+    margin: $space-base auto;
+    text-align: center;
+  }
+
+  .form {
+    margin-top: $space-giant;
+  }
+}

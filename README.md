@@ -26,8 +26,11 @@ To try it out, open [Pokmon Battle Frontier](http://pokemon-battle-frontier.hero
 > A more thorough breakdown coming soon.
 
 * Create a game
+
 * Destroy a game
+
 * Accepts coordinates for the player’s next move.
+
 * Returns the coordinates for the CPU’s next move.
 
 ### The game works like this
@@ -51,13 +54,6 @@ To try it out, open [Pokmon Battle Frontier](http://pokemon-battle-frontier.hero
 * Alternate moves between player and CPU.
 
 * The first player to have all ships destroyed is the loser.
-
-### Roadmap
-
-* ~~Add in user sessions so the server can handle more than one game at a time.~~
-* Add a leaderboard that keeps winner’s initials and ranks them according to the time it took them to win.
-* ~~Players can post comments (chat) during a game.~~
-* ~~Deploy the application.~~
 
 ## How to use
 

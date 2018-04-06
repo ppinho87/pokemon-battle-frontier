@@ -49,7 +49,7 @@ App.GameCreate = React.createClass({
         return (
             <form id="gameCreate" className="create game form" onSubmit={this.handleSubmit}>
                 <div className="input group">
-                    <label className="label" htmlFor="title"><i className="fa fa-rocket"></i></label>
+                    <label className="label" htmlFor="title"><i className="fa fa-dot-circle-o"></i></label>
                     <input type="text" name="title" className="title input" placeholder="Title of your game"
                            autofocus/>
                     <button type="submit" className="primary icon button"><i className="fa fa-plus"></i></button>

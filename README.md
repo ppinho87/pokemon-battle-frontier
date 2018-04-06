@@ -1,17 +1,17 @@
-# Meteor Battleship
+# Pokemon Battleship
 
 A battleship game built with Meteor and React.
 
 [IN PRODUCTION](http://spacebattle.co)
 
-* [What it is](#what-it-is)
-* [How to use](#how-to-use)
+  * [What it is](#what-it-is)
+  * [How to use](#how-to-use)
   * [Requirements](#requirements)
   * [Run Locally](#run-locally)
-* [Structure](#structure)
+  * [Structure](#structure)
   * [Packages used](#packages-used)
   * [Folder structure](#folder-structure)
-* [License](#license)
+  * [License](#license)
 
 ## What it is
 
@@ -29,14 +29,23 @@ A simple battleship game that uses an API
 ### The game works like this
 
 * A battleship occupies one block.
+
 * The starting board will be 5x5.
+
 * The player starts a game and places 10 ships on the board.
+
 * The player submits their positions on the board via the API.
+
 * The CPU places its ships on the board.
+
 * The player is given the first move and submits coordinates to strike.
+
 * If a ship is hit, it is destroyed.
+
 * Allow the CPU to attack.
+
 * Alternate moves between player and CPU.
+
 * The first player to have all ships destroyed is the loser.
 
 ### Roadmap
@@ -53,14 +62,16 @@ A simple battleship game that uses an API
 Make sure [Meteor is installed and up to date](https://www.meteor.com/install) or run:
 
 ```sh
-curl https://install.meteor.com/ | sh
+OSX / LINUX: curl https://install.meteor.com/ | sh
+
+WINDOWS: choco install meteor
 ```
 
 ### Run Locally
 
 ```sh
-git clone git@github.com:amazingBastard/mtr-battleship.git
-cd mtr-battleship
+git clone https://github.com/pinhop07/pokemon-battleship.git
+cd pokemon-battleship
 ```
 
 Run the following to get the bash file to work:  
@@ -232,6 +243,18 @@ environments/       # Environments folder
   * [digilord:faker](https://github.com/digilord/meteor-faker)
   * [momentjs:moment](https://github.com/moment/moment/)
 
-## License
+### Built With
 
-This project has an MIT License, see the LICENSE.txt for more information.
+* Visual Studio Code - Text Editor
+
+### Copyright
+
+* Adriana Salvador
+* Alexa Martinez
+* Jeffrey Francois
+* Mark Pinho
+* Paul Pinho
+
+### Copyright
+
+RandomScript © 2018. All Rights Reserved.

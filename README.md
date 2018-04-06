@@ -11,7 +11,9 @@ A battleship game built with Meteor and React.
   * [Structure](#structure)
   * [Packages used](#packages-used)
   * [Folder structure](#folder-structure)
-  * [License](#license)
+  * [Built With](#built-with)
+  * [Authors](#authors)
+  * [Copyright](#copyright)
 
 ## What it is
 
@@ -247,7 +249,7 @@ environments/       # Environments folder
 
 * Visual Studio Code - Text Editor
 
-### Copyright
+### Authors
 
 * Adriana Salvador
 * Alexa Martinez

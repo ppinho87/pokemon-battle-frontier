@@ -2,8 +2,6 @@
 
 A battleship game built with Meteor and React.
 
-[IN PRODUCTION](http://spacebattle.co)
-
   * [What it is](#what-it-is)
   * [How to use](#how-to-use)
   * [Requirements](#requirements)

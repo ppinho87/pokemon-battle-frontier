@@ -4,11 +4,11 @@ A battleship game built with Meteor and React.
 
   * [What it is](#what-it-is)
   * [How to use](#how-to-use)
-  * [Requirements](#requirements)
-  * [Run Locally](#run-locally)
+    * [Requirements](#requirements)
+    * [Run Locally](#run-locally)
   * [Structure](#structure)
-  * [Packages used](#packages-used)
-  * [Folder structure](#folder-structure)
+    * [Packages used](#packages-used)
+    * [Folder structure](#folder-structure)
   * [Built With](#built-with)
   * [Authors](#authors)
   * [Copyright](#copyright)
@@ -74,8 +74,8 @@ WINDOWS: choco install meteor
 ### Run Locally
 
 ```sh
-git clone https://github.com/pinhop07/pokemon-battleship.git
-cd pokemon-battleship
+git clone https://github.com/pinhop07/pokemon-battle-frontier.git
+cd pokemon-battle-frontier
 ```
 
 Run the following to get the bash file to work:  

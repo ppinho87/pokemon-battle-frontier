@@ -17,6 +17,10 @@ A battleship game built with Meteor and React.
 
 A simple battleship game that uses an API
 
+### Getting Started
+
+To try it out, open [Pokmon Battle Frontier](http://pokemon-battle-frontier.herokuapp.com/) in your browser of choice.
+
 ### The API endpoints
 
 > A more thorough breakdown coming soon.

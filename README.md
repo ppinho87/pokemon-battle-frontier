@@ -131,7 +131,7 @@ Configure your mup.json file for deployment in environments/production dir. This
   // Location of app (local directory). This can reference '~' as the users home directory.
   // i.e., "app": "~/Meteor/my-app",
   // This is the same as the line below.
-  "app": "/Users/arunoda/Meteor/my-app",
+  "app": "/Users/pokemon/Meteor/my-app",
 
   // Configure environment
   // ROOT_URL must be set to https://YOURDOMAIN.com when using the spiderable package & force SSL
@@ -139,8 +139,7 @@ Configure your mup.json file for deployment in environments/production dir. This
   "env": {
     "PORT": 80,
     "ROOT_URL": "http://myapp.com",
-    "MONGO_URL": "mongodb://arunoda:fd8dsjsfh7@hanso.mongohq.com:10023/MyApp",
-    "MAIL_URL": "smtp://postmaster%40myapp.mailgun.org:adj87sjhd7s@smtp.mailgun.org:587/"
+    "MONGO_URL": "mongodb://pokemon:pokemon@hanso.mongohq.com:12345/My-App"
   },
 
   // Meteor Up checks if the app comes online just after the deployment.

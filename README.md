@@ -1,4 +1,4 @@
-# Pokemon Battleship
+# Pokemon Battle Frontier
 
 A battleship game built with Meteor and React.
 

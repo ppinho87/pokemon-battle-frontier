@@ -28,7 +28,7 @@ App.GameBoards = React.createClass({
     spawnBot(event) {
         event.preventDefault();
         let gameId = this.data.gameId,
-            bot = 'HAL9000';
+            bot = 'ASH99';
 
         // when bot is on offensive - generate random targetId (1 to 5 + A to E)
         // ensure random targetId is never the same each round (has to change after each attack)
@@ -83,7 +83,7 @@ App.GameBoards = React.createClass({
                             if (error) {
                                 Bert.alert(error.reason, 'warning');
                             } else {
-                                Bert.alert('HAL9000 joins the battle!', 'success');
+                                Bert.alert('ASH99 joins the battle!', 'success');
                             }
                         });
                     }
@@ -152,7 +152,7 @@ App.GameBoards = React.createClass({
 
                 let ready = creatorBoard.status === 'ready' && destroyerBoard.status === 'ready',
                     offensive = creatorBoard.status === 'offense',
-                    botOpponent = creatorBoard.status === 'defense' && destroyerBoard.owner === 'HAL9000';
+                    botOpponent = creatorBoard.status === 'defense' && destroyerBoard.owner === 'ASH99';
 
                 if (ready || offensive) {
                     return (
@@ -220,7 +220,7 @@ App.GameBoards = React.createClass({
                                                                 }
                                                             });
                                                         } else {
-                                                            Bert.alert('HAL9000 destroyed your position at ' + attackAttributes.targetId + '!', 'warning');
+                                                            Bert.alert('ASH99 destroyed your position at ' + attackAttributes.targetId + '!', 'warning');
                                                         }
                                                     }
                                                 });

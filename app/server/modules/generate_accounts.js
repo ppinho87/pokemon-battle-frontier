@@ -6,10 +6,10 @@ let administrators = [
         password: 'admin'
     },
     {
-        name: {first: 'HAL', last: '9000'},
-        username: 'HAL9000',
-        email: 'hal@spacebattle.co',
-        password: 'daisy'
+        name: {first: 'ASH', last: '99'},
+        username: 'ASH99',
+        email: 'ash@email.com',
+        password: 'password'
     }
 ];
 

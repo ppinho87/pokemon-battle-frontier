@@ -40,11 +40,11 @@ App.GameBoard = React.createClass({
                 if (error) {
                     Bert.alert(error.reason, 'warning');
                 } else {
-                    Bert.alert('Your units are deployed, get ready for battle!', 'success');
+                    Bert.alert('Your pokemon are deployed, get ready for battle!', 'success');
                 }
             });
         } else {
-            Bert.alert('You still have units in reserve, place them on the board!', 'warning');
+            Bert.alert('You still have pokemon in reserve, place them on the board!', 'warning');
         }
     },
 
@@ -56,6 +56,7 @@ App.GameBoard = React.createClass({
         let user = Meteor.user(),
             gameId = this.data.gameId,
             targetId = this.data.board.targetId,
+            targetPokemon = this.data.board.targetPokemon,
             targets = this.data.board.targets,
             target = _.find(targets, function (target) {
                 return target.id === targetId
@@ -69,6 +70,7 @@ App.GameBoard = React.createClass({
                 boardId: this.data.board._id,
                 boardStatus: 'offense',
                 targetId: target.id,
+                targetPokemon: target.pokemon,
                 targetStatus: target.status
             };
 
@@ -132,12 +134,12 @@ App.GameBoard = React.createClass({
                                                 }
                                             });
                                         } else {
-                                            Bert.alert('You completely wiped out the enemy\'s position at ' + attackAttributes.targetId + '!', 'success');
+                                            Bert.alert('You completely wiped out the enemy\'s ' + attackAttributes.targetPokemon + '!', 'success');
                                         }
                                     }
                                 });
                             } else {
-                                Bert.alert('Your attack failed! No units were found at ' + attackAttributes.targetId + '.', 'warning');
+                                Bert.alert('Your attack failed! No pokemon were found at ' + attackAttributes.targetId + '.', 'warning');
                             }
                         }
                     });
@@ -159,7 +161,7 @@ App.GameBoard = React.createClass({
             return (
                 <module className="actions module">
                     <button type="button" className="fluid centered button" onClick={this.handleUnitDeployment}>Deploy
-                        Units
+                        Pokemon
                     </button>
                 </module>
             );

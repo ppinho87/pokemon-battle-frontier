@@ -56,20 +56,22 @@ App.GameBoards = React.createClass({
                     } else {
                         let board = boardId,
                             targets = ['5A', '2B', '4C', '3D', '1E'];
+                            characters = ['Mew', 'Charizard', 'Blastoise', 'Venusaur', 'Pikachu']
 
                         // @TODO: make a collection of unit placements for bot - get one at random
 
                         for (var target = 0; target < targets.length; target++) {
                             let targetAttributes = {
                                 boardId: board._id,
-                                targetId: targets[target]
+                                targetId: targets[target],
+                                targetPokemon: characters[target]
                             };
 
                             Meteor.call('placeUnit', targetAttributes, (error) => {
                                 if (error) {
                                     Bert.alert(error.reason, 'warning');
                                 } else {
-                                    console.log('Bot placed unit on ' + targetAttributes.targetId);
+                                    console.log('Bot placed ' + targetAttributes.targetPokemon + ' on ' + targetAttributes.targetId);
                                 }
                             });
                         }
@@ -175,6 +177,7 @@ App.GameBoards = React.createClass({
                             boardId: creatorBoard._id,
                             boardStatus: 'offense',
                             targetId: attackTarget.id,
+                            targetPokemon: attackTarget.pokemon,
                             targetStatus: attackTarget.status
                         };
 
@@ -220,7 +223,7 @@ App.GameBoards = React.createClass({
                                                                 }
                                                             });
                                                         } else {
-                                                            Bert.alert('ASH99 destroyed your position at ' + attackAttributes.targetId + '!', 'warning');
+                                                            Bert.alert('ASH99 destroyed your ' + attackAttributes.targetPokemon + '!', 'warning');
                                                         }
                                                     }
                                                 });

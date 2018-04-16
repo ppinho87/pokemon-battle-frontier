@@ -38,6 +38,10 @@ let BoardsSchema = new SimpleSchema({
         type: String,
         label: 'Status of the target cell'
     },
+    'targets.$.pokemon': {
+        type: String,
+        label: 'Pokemon of the target cell'
+    },
     'targets.$.isTarget': {
         type: Boolean,
         label: 'Target cell is targeted by opponent'
@@ -51,6 +55,11 @@ let BoardsSchema = new SimpleSchema({
     targetId: {
         type: String,
         label: 'The id of target being attacked',
+        optional: true
+    },
+    targetPokemon: {
+        type: String,
+        label: 'The pokemon of target being attacked',
         optional: true
     }
 });

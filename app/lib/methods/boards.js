@@ -1,9 +1,13 @@
+let characters = []
+
 Meteor.methods({
     createGameBoard(boardAttributes) {
         check(boardAttributes, {
             gameId: String,
             owner: String
         });
+
+        characters.push('Mew', 'Charizard', 'Blastoise', 'Venusaur', 'Pikachu')
 
         let now = new Date(),
             user = Meteor.user(),
@@ -21,34 +25,35 @@ Meteor.methods({
                 status: null,
                 // @TODO: function to generate targets
                 targets: [
-                    {id: '1A', status: 'empty', isTarget: false},
-                    {id: '2A', status: 'empty', isTarget: false},
-                    {id: '3A', status: 'empty', isTarget: false},
-                    {id: '4A', status: 'empty', isTarget: false},
-                    {id: '5A', status: 'empty', isTarget: false},
-                    {id: '1B', status: 'empty', isTarget: false},
-                    {id: '2B', status: 'empty', isTarget: false},
-                    {id: '3B', status: 'empty', isTarget: false},
-                    {id: '4B', status: 'empty', isTarget: false},
-                    {id: '5B', status: 'empty', isTarget: false},
-                    {id: '1C', status: 'empty', isTarget: false},
-                    {id: '2C', status: 'empty', isTarget: false},
-                    {id: '3C', status: 'empty', isTarget: false},
-                    {id: '4C', status: 'empty', isTarget: false},
-                    {id: '5C', status: 'empty', isTarget: false},
-                    {id: '1D', status: 'empty', isTarget: false},
-                    {id: '2D', status: 'empty', isTarget: false},
-                    {id: '3D', status: 'empty', isTarget: false},
-                    {id: '4D', status: 'empty', isTarget: false},
-                    {id: '5D', status: 'empty', isTarget: false},
-                    {id: '1E', status: 'empty', isTarget: false},
-                    {id: '2E', status: 'empty', isTarget: false},
-                    {id: '3E', status: 'empty', isTarget: false},
-                    {id: '4E', status: 'empty', isTarget: false},
-                    {id: '5E', status: 'empty', isTarget: false}
+                    {id: '1A', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '2A', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '3A', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '4A', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '5A', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '1B', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '2B', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '3B', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '4B', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '5B', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '1C', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '2C', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '3C', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '4C', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '5C', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '1D', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '2D', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '3D', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '4D', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '5D', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '1E', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '2E', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '3E', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '4E', status: 'empty', pokemon: 'empty', isTarget: false},
+                    {id: '5E', status: 'empty', pokemon: 'empty', isTarget: false}
                 ],
                 placementCount: 0,
-                targetId: null
+                targetId: null,
+                targetPokemon: null
             }), boardId = Boards.insert(board);
 
             return {_id: boardId};
@@ -77,7 +82,8 @@ Meteor.methods({
     placeUnit(targetAttributes) {
         check(targetAttributes, {
             boardId: String,
-            targetId: String
+            targetId: String,
+            targetPokemon: String
         });
 
         let user = Meteor.user(),
@@ -93,8 +99,10 @@ Meteor.methods({
         if (placementLimit) {
             throw new Meteor.Error('max-selected-units', 'You don\'t have any more units to spare.');
         } else {
+            let character = characters.pop();
+            
             Boards.update({_id: targetAttributes.boardId, 'targets.id': targetAttributes.targetId}, {
-                $set: {'targets.$.status': 'selected'},
+                $set: {'targets.$.status': 'selected', 'targets.$.pokemon': character},
                 $inc: { placementCount: +1 }
             });
         }
@@ -102,7 +110,8 @@ Meteor.methods({
     removeUnit(targetAttributes) {
         check(targetAttributes, {
             boardId: String,
-            targetId: String
+            targetId: String,
+            targetPokemon: String
         });
 
         let user = Meteor.user(),
@@ -114,8 +123,12 @@ Meteor.methods({
         if (!board) {
             throw new Meteor.Error('game-board-does-not-exist', 'This game board is not available');
         } else {
+            let removeCharacter = targetAttributes.targetPokemon;
+
+            characters.push(removeCharacter)
+
             Boards.update({_id: targetAttributes.boardId, 'targets.id': targetAttributes.targetId}, {
-                $set: {'targets.$.status': 'empty'},
+                $set: {'targets.$.status': 'empty', 'targets.$.pokemon': 'empty'},
                 $inc: { placementCount: -1 }
             });
         }
@@ -123,7 +136,8 @@ Meteor.methods({
     chooseTarget(targetAttributes) {
         check(targetAttributes, {
             boardId: String,
-            targetId: String
+            targetId: String,
+            targetPokemon: String
         });
 
         let user = Meteor.user(),
@@ -147,7 +161,8 @@ Meteor.methods({
     removeTarget(targetAttributes) {
         check(targetAttributes, {
             boardId: String,
-            targetId: String
+            targetId: String,
+            targetPokemon: String
         });
 
         let user = Meteor.user(),
@@ -169,6 +184,7 @@ Meteor.methods({
             boardId: String,
             boardStatus: String,
             targetId: String,
+            targetPokemon: String,
             targetStatus: String
         });
 

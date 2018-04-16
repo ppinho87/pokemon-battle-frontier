@@ -16,7 +16,9 @@ App.GameBoardTarget = React.createClass({
             boardStatus: this.props.boardProps.status,
             boardOwner: this.props.boardProps.owner,
             boardTarget: this.props.boardProps.targetId,
+            boardPokemon: this.props.boardProps.targetPokemon,
             targetId: this.props.targetProps.id,
+            targetPokemon: this.props.targetProps.pokemon,
             targetStatus: this.props.targetProps.status,
             isTarget: this.props.targetProps.isTarget
         };
@@ -40,7 +42,8 @@ App.GameBoardTarget = React.createClass({
             if (noUnitsDeployed) {
                 let targetAttributes = {
                     boardId: this.data.boardId,
-                    targetId: this.data.targetId
+                    targetId: this.data.targetId,
+                    targetPokemon: this.data.targetPokemon
                 };
 
                 if (targetEmpty) {
@@ -48,7 +51,7 @@ App.GameBoardTarget = React.createClass({
                         if (error) {
                             Bert.alert(error.reason, 'warning');
                         } else {
-                            console.log('Unit placed on ' + targetAttributes.targetId);
+                            console.log('Pokemon placed on ' + targetAttributes.targetId);
                         }
                     });
                 } else {
@@ -56,7 +59,7 @@ App.GameBoardTarget = React.createClass({
                         if (error) {
                             Bert.alert(error.reason, 'warning');
                         } else {
-                            console.log('Unit removed from ' + targetAttributes.targetId);
+                            console.log(targetAttributes.targetPokemon + ' removed from ' + targetAttributes.targetId);
                         }
                     });
                 }
@@ -67,11 +70,12 @@ App.GameBoardTarget = React.createClass({
             if (ready || offensive) {
                 let targetAttributes = {
                     boardId: this.data.boardId,
-                    targetId: this.data.targetId
+                    targetId: this.data.targetId,
+                    targetPokemon: this.data.targetPokemon
                 };
 
                 if (targetAttacked) {
-                    Bert.alert('You already attacked target ' + targetAttributes.targetId, 'warning');
+                    Bert.alert('You already attacked ' + targetAttributes.targetPokemon, 'warning');
                 } else {
                     if (!isTarget) {
                         Meteor.call('chooseTarget', targetAttributes, (error) => {
@@ -100,6 +104,7 @@ App.GameBoardTarget = React.createClass({
     render() {
         let className = 'cell',
             idName = this.data.targetId,
+            pokemonName = this.data.targetPokemon,
             isBoardOwner = Meteor.user().username === this.data.boardOwner,
             isSelected = this.data.targetStatus === 'selected',
             isTarget = this.data.isTarget,
@@ -109,16 +114,16 @@ App.GameBoardTarget = React.createClass({
         // @TODO: refactor - micro-branching
 
         if (isSelected && isBoardOwner) {
-            className += ' selected';
+            className += ' selected ' + pokemonName;
         }
         if (isTarget) {
-            className += ' target'
+            className += ' target';
         }
         if (missed) {
-            className += ' missed'
+            className += ' missed';
         }
         if (destroyed) {
-            className += ' destroyed'
+            className += ' destroyed ' + pokemonName;
         }
 
         return (

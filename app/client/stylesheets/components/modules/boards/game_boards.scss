@@ -50,18 +50,80 @@
 
         &.selected {
           background-color: rgba($primary-color, 0.5);
+
+          &.Pikachu {
+            background-image: url('/images/Pikachu.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+          }
+          &.Venusaur {
+            background-image: url('/images/Venusaur.png');  
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center bottom;        
+          }
+          &.Blastoise {
+            background-image: url('/images/Blastoise.png');    
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center bottom;      
+          }
+          &.Charizard {
+            background-image: url('/images/Charizard.png');    
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center bottom;      
+          }
+          &.Mew {
+            background-image: url('/images/Mew.png');         
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center bottom; 
+          }
         }
 
         &.target {
           background-color: rgba($negative-color, 0.5);
         }
-
+        
         &.missed {
           background-color: rgba($caution-color, 0.5);
         }
-
+        
         &.destroyed {
           background-color: rgba($negative-color, 0.5);
+
+          &.Pikachu {
+            background-image: url('/images/Pikachu.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+          }
+          &.Venusaur {
+            background-image: url('/images/Venusaur.png');  
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center bottom;        
+          }
+          &.Blastoise {
+            background-image: url('/images/Blastoise.png');    
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center bottom;      
+          }
+          &.Charizard {
+            background-image: url('/images/Charizard.png');    
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center bottom;      
+          }
+          &.Mew {
+            background-image: url('/images/Mew.png');         
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center bottom; 
+          }
         }
       }
     }

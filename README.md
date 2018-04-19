@@ -204,4 +204,4 @@ environments/       # Environments folder
 
 ### Copyright
 
-RandomScript © 2018. All Rights Reserved.
+RandomScripters © 2018. All Rights Reserved.

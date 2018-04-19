@@ -1,4 +1,4 @@
-# Pokemon Battle Frontier
+# Pokémon Battle Frontier
 
 A battleship game built with Meteor and React.
 
@@ -15,11 +15,11 @@ A battleship game built with Meteor and React.
 
 ## What it is
 
-A simple battleship game that uses an API
+A simple Pokémon theme battleship game that uses an API
 
 ### Getting Started
 
-To try it out, open [Pokmon Battle Frontier](http://pokemon-battle-frontier.herokuapp.com/) in your browser of choice.
+To try it out, open [Pokémon Battle Frontier](http://pokemon-battle-frontier.herokuapp.com/) in your browser of choice.
 
 ### The API endpoints
 
@@ -27,7 +27,7 @@ To try it out, open [Pokmon Battle Frontier](http://pokemon-battle-frontier.hero
 
 * Create a game
 
-* Destroy a game
+* End a game
 
 * Accepts coordinates for the player’s next move.
 
@@ -35,25 +35,25 @@ To try it out, open [Pokmon Battle Frontier](http://pokemon-battle-frontier.hero
 
 ### The game works like this
 
-* A battleship occupies one block.
+* A pokémon occupies one block.
 
 * The starting board will be 5x5.
 
-* The player starts a game and places 10 ships on the board.
+* The player starts a game and places 5 pokémon on the board.
 
 * The player submits their positions on the board via the API.
 
-* The CPU places its ships on the board.
+* The CPU places its pokémon on the board.
 
 * The player is given the first move and submits coordinates to strike.
 
-* If a ship is hit, it is destroyed.
+* If a pokémon is hit, it is destroyed.
 
 * Allow the CPU to attack.
 
 * Alternate moves between player and CPU.
 
-* The first player to have all ships destroyed is the loser.
+* The first player to have all pokémon destroyed is the loser.
 
 ## How to use
 

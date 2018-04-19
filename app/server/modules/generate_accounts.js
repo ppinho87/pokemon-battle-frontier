@@ -1,8 +1,8 @@
 let administrators = [
     {
-        name: {first: 'Admin', last: 'McAdmin'},
+        name: {first: 'Admin', last: 'Admin'},
         username: 'admin',
-        email: 'admin@spacebattle.co',
+        email: 'admin@battlefrontier.com',
         password: 'admin'
     },
     {

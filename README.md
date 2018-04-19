@@ -84,73 +84,21 @@ Now you can start the app with the following command `./run.sh` and the app shou
 
 ### Deployment
 
-Make sure you have Meteor Up (mup) installed.  
+**Create a new app on Heroku.** Login to heroku and go to the dashboard. Click on the ‘New’ button and pick a name for your app. It’s okay if this is different than the name of your git repo. We will use this name again in a moment.
 
-```sh
-npm install -g mup
-```
+**Connect your repository to Heroku.** Open a terminal window and browse to your Meteor project directory. Run `heroku login` and enter your credentials. Run `heroku git:remote -a $NAME` where `$NAME` is the name of your project on heroku. You should see `git remote heroku added`. For more information, see heroku’s instructions on deployment.
 
-Configure your mup.json file for deployment in environments/production dir. This is an example file:  
+**Setup the buildpack.** Run `heroku buildpacks:set https://github.com/AdmitHub/meteor-buildpack-horse.git` in your project directory to add the buildback to your project. A ‘buildpack’ is heroku terminology for all the configuration stuff that tells heroku how to setup your app. Luckily a nice person made a great one for us so we don’t need to do it ourselves. If you’d like to learn more about Meteor Buildpack Horse (including the significance of ‘Horse’) check out the README in the git repo [here](https://github.com/AdmitHub/meteor-buildpack-horse).
 
-```js
-{
-  // Server authentication info
-  "servers": [
-    {
-      "host": "hostname",
-      "username": "root",
-      "password": "password",
-      // or pem file (ssh based authentication)
-      //"pem": "~/.ssh/id_rsa",
-      // Also, for non-standard ssh port use this
-      //"sshOptions": { "port" : 49154 },
-      // server specific environment variables
-      "env": {}
-    }
-  ],
+**Link your MongoDB to your app.** If you created a database using the `heroku addons:create mongolab` command then you can skip this step. To tell heroku where our database is we must configure the MONGO_URL environment variable. To do this, run `heroku config:set MONGO_URL="$URL"` where `$URL` is the MongoDB URI of your database. Note that it should be enclosed in quotes.
 
-  // Install MongoDB on the server. Does not destroy the local MongoDB on future setups
-  "setupMongo": true,
+MongoDB URIs begin with "mongodb://". If you set up your database manually in the last step then you can simply copy the URI on the mLab dashboard and replace and with the username and password of the database user you created.
 
-  // WARNING: Node.js is required! Only skip if you already have Node.js installed on server.
-  "setupNode": true,
+**Set the ROOT_URL.** Run `heroku config:set ROOT_URL="https://<appname>.herokuapp.com"` where `<appname>` is the name of your app on heroku. If you have a custom domain you can use that as the ROOT_URL instead.
 
-  // WARNING: nodeVersion defaults to 0.10.36 if omitted. Do not use v, just the version number.
-  "nodeVersion": "0.10.36",
+**Deploy.** Run `git push heroku master` to deploy to heroku. Your terminal will print some short logs that look a lot like what you see when you push to GitHub. After that you will begin to see lines prefaced by `remote:`. These are logs from Heroku documenting the setup process. You can watch them if you like or you can turn off your computer and go for a walk. The deploy takes about five minutes so it might have to be a short walk.
 
-  // Install PhantomJS on the server
-  "setupPhantom": true,
-
-  // Show a progress bar during the upload of the bundle to the server.
-  // Might cause an error in some rare cases if set to true, for instance in Shippable CI
-  "enableUploadProgressBar": true,
-
-  // Application name (no spaces).
-  "appName": "meteor",
-
-  // Location of app (local directory). This can reference '~' as the users home directory.
-  // i.e., "app": "~/Meteor/my-app",
-  // This is the same as the line below.
-  "app": "/Users/pokemon/Meteor/my-app",
-
-  // Configure environment
-  // ROOT_URL must be set to https://YOURDOMAIN.com when using the spiderable package & force SSL
-  // your NGINX proxy or Cloudflare. When using just Meteor on SSL without spiderable this is not necessary
-  "env": {
-    "PORT": 80,
-    "ROOT_URL": "http://myapp.com",
-    "MONGO_URL": "mongodb://pokemon:pokemon@hanso.mongohq.com:12345/My-App"
-  },
-
-  // Meteor Up checks if the app comes online just after the deployment.
-  // Before mup checks that, it will wait for the number of seconds configured below.
-  "deployCheckWaitTime": 15
-}
-```
-
-From the environments/production dir, run ```mup setup``` to setup the server. Then, running ```mup deploy``` will deploy your app.
-
-Check out the [mup docs](https://github.com/arunoda/meteor-up) for more info.
+**Logs.** Run `heroku logs --tail` from your project directory to get real-time logs from your Heroku server.
 
 ## Structure
 
